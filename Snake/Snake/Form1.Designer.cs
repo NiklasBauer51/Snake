@@ -1,4 +1,6 @@
-﻿namespace Snake
+﻿using System;
+
+namespace Snake
 {
     partial class Form1
     {
@@ -37,10 +39,10 @@
             this.ClientSize = new System.Drawing.Size(376, 363);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
+        
 
         #endregion
     }

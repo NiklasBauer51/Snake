@@ -11,6 +11,7 @@ namespace Snake
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
+        /// test123
         [STAThread]
         static void Main()
         {

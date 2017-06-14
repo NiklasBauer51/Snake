@@ -12,40 +12,33 @@ namespace Snake
 {
     public partial class Form1 : Form
     {
+        Erdbeere erdbeere;
+
         public Form1()
         {
             InitializeComponent();
+            erdbeere = new Erdbeere(new Point(1, 1));
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-
         }
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(new Point(100, 100), new Size(30, 10)));
-            e.Graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(new Point(130, 100), new Size(30, 10)));
-            e.Graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(new Point(160, 100), new Size(30, 10)));
-            e.Graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(new Point(190, 100), new Size(30, 10)));
-
-
-
+            erdbeere.ZeichneErdbeere(e);    // Methode wird aufgerufen, um die Erdbeere zu zeichnen
             base.OnPaint(e);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Background_Click(object sender, EventArgs e)
         {
-
         }
 
         private void GameOverlabel_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

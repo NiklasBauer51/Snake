@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 
-
-
-namespace FruchtGenerierungTest
+namespace Snake
 {
     class Erdbeere
     {
@@ -16,17 +14,16 @@ namespace FruchtGenerierungTest
 
         public Erdbeere(Point position)
         {
-
-            Random rnd = new Random();
-            int zufallX = rnd.Next(50, 500);
+            Random rnd = new Random();          // Zufallsvariable X und Y im Bereich (50, 500)
+            int zufallX = rnd.Next(50, 500);    
             int zufallY = rnd.Next(50, 500);
 
-            position.X += zufallX; //Position.X = Position.X + zufallX
+            position.X += zufallX; //Position.X = Position.X + zufallX, Parameter werden überwiesen
             position.Y += zufallY;
             Position = position;
         }
 
-        public void ZeichneErdbeere(PaintEventArgs e)
+        public void ZeichneErdbeere(PaintEventArgs e)   // Erdbeere
         {
             e.Graphics.FillRectangle(new SolidBrush(Color.Green), new Rectangle(new Point(Position.X - 20, Position.Y + 5), new Size(5, 10))); // 370, 175
             e.Graphics.FillRectangle(new SolidBrush(Color.Green), new Rectangle(new Point(Position.X + 20, Position.Y + 5), new Size(5, 10))); // 410, 175 
@@ -40,8 +37,8 @@ namespace FruchtGenerierungTest
             e.Graphics.FillRectangle(new SolidBrush(Color.Yellow), new Rectangle(new Point(Position.X - 5, Position.Y + 10), new Size(5, 5))); // 385, 180
             e.Graphics.FillRectangle(new SolidBrush(Color.Yellow), new Rectangle(new Point(Position.X + 5, Position.Y + 10), new Size(5, 5))); // 395, 180
             e.Graphics.FillRectangle(new SolidBrush(Color.Yellow), new Rectangle(new Point(Position.X - 5, Position.Y + 10), new Size(5, 5))); // 385, 180
-            e.Graphics.FillRectangle(new SolidBrush(Color.Yellow), new Rectangle(new Point(Position.X , Position.Y + 20), new Size(5, 5))); // 390, 190
-        //    e.Graphics.FillRectangle(new SolidBrush(Color.Blue), new Rectangle(new Point(390, 170), new Size(5, 5))); // Fixpunkt
+            e.Graphics.FillRectangle(new SolidBrush(Color.Yellow), new Rectangle(new Point(Position.X, Position.Y + 20), new Size(5, 5))); // 390, 190
+            //    e.Graphics.FillRectangle(new SolidBrush(Color.Blue), new Rectangle(new Point(390, 170), new Size(5, 5))); // Fixpunkt
         }
     }
 }

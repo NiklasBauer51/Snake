@@ -167,7 +167,15 @@ namespace Snake
             GenerateFood();
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Input.ChangeState(e.KeyCode, true);
+        }
 
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            Input.ChangeState(e.KeyCode, false);
+        }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {

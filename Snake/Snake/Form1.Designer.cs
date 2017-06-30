@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Background = new System.Windows.Forms.PictureBox();
             this.GameOverlabel = new System.Windows.Forms.Label();
+            this.ScoreLabel = new System.Windows.Forms.Label();
+            this.gameTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,12 +60,24 @@
             this.GameOverlabel.Visible = false;
             this.GameOverlabel.Click += new System.EventHandler(this.GameOverlabel_Click);
             // 
+            // ScoreLabel
+            // 
+            this.ScoreLabel.AutoSize = true;
+            this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.Location = new System.Drawing.Point(461, 12);
+            this.ScoreLabel.Name = "ScoreLabel";
+            this.ScoreLabel.Size = new System.Drawing.Size(118, 37);
+            this.ScoreLabel.TabIndex = 5;
+            this.ScoreLabel.Text = "Score: ";
+            this.ScoreLabel.Click += new System.EventHandler(this.ScoreLabel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(723, 437);
+            this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.GameOverlabel);
             this.Controls.Add(this.Background);
             this.Name = "Form1";
@@ -78,6 +93,8 @@
 
         private System.Windows.Forms.PictureBox Background;
         private System.Windows.Forms.Label GameOverlabel;
+        private System.Windows.Forms.Label ScoreLabel;
+        private System.Windows.Forms.Timer gameTimer;
     }
 }
 

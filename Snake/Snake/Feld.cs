@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Snake
 {
-    public partial class Form1 : Form
+    public partial class Feld : Form
     {
         Erdbeere erdbeere;
         private List<Circle> Snake = new List<Circle>();
         private Circle food = new Circle();
 
-        public Form1()
+        public Feld()
         {
             InitializeComponent();
 
@@ -50,12 +50,20 @@ namespace Snake
         }
         private void GenerateFood()
         {
-            int maxXPos = Background.Size.Width / Einstellung.Width;
-            int maxYPos = Background.Size.Height / Einstellung.Height;
+            //int maxXPos = Background.Size.Width / Einstellung.Width;
+            //int maxYPos = Background.Size.Height / Einstellung.Height;
 
-            Random random = new Random();
-            food = new Circle {X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos)};
+            //Random random = new Random();
+            //food = new Circle { X = random.Next(0, maxXPos), Y = random.Next(0, maxYPos) };
         }
+
+        //private void Füttern()  // Test Füttern, wenn Schlange vorhanden ist
+        //{
+        //    if (Schlangenkopf.X == zufallX && Schlangenkof.Y == zufallY)
+        //    {
+        //        erdbeere.ZeichneErdbeere(e);
+        //    }
+        //}
 
         private void UpdateScreen(object sender, EventArgs e)
         {
@@ -82,7 +90,7 @@ namespace Snake
                 MovePlayer();
             }
 
-            Background.Invalidate();
+            //Background.Invalidate();
 
         }
         private void MovePlayer()
@@ -108,17 +116,16 @@ namespace Snake
                             break;
                     }
 
-
                     // Maximales X und Y Pos erhalten
-                    int maxXPos = Background.Size.Width / Einstellung.Width;
-                    int maxYPos = Background.Size.Height / Einstellung.Height;
+                    //int maxXPos = Background.Size.Width / Einstellung.Width;
+                    //int maxYPos = Background.Size.Height / Einstellung.Height;
 
                     // Kollision mit Spielgrenzen erkennen.
-                    if (Snake[i].X < 0 || Snake[i].Y < 0
-                        || Snake[i].X >= maxXPos || Snake[i].Y >= maxYPos)
-                    {
-                        Die();
-                    }
+                    //if (Snake[i].X < 0 || Snake[i].Y < 0
+                    //    || Snake[i].X >= maxXPos || Snake[i].Y >= maxYPos)
+                    //{
+                    //    Die();
+                    //}
 
 
                     // Kollision mit Körper erkennen
@@ -146,10 +153,12 @@ namespace Snake
                 }
             }
         }
+
         private void Die()
         {
             Einstellung.GameOver = true;
         }
+
         private void Eat()
         {
             // Circle zum Körper hinzufügen

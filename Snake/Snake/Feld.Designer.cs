@@ -1,6 +1,6 @@
 ﻿namespace Snake
 {
-    partial class Form1
+    partial class Feld
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -29,30 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.Background = new System.Windows.Forms.PictureBox();
             this.GameOverlabel = new System.Windows.Forms.Label();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
+            this.LabelAbgrenzung = new System.Windows.Forms.Label();
+            this.ScoreLabelText = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // Background
-            // 
-            this.Background.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Background.Image = ((System.Drawing.Image)(resources.GetObject("Background.Image")));
-            this.Background.Location = new System.Drawing.Point(12, 12);
-            this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(432, 424);
-            this.Background.TabIndex = 1;
-            this.Background.TabStop = false;
-            this.Background.Click += new System.EventHandler(this.Background_Click);
             // 
             // GameOverlabel
             // 
             this.GameOverlabel.AutoSize = true;
             this.GameOverlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameOverlabel.Location = new System.Drawing.Point(52, 37);
+            this.GameOverlabel.Location = new System.Drawing.Point(12, 9);
             this.GameOverlabel.Name = "GameOverlabel";
             this.GameOverlabel.Size = new System.Drawing.Size(239, 37);
             this.GameOverlabel.TabIndex = 4;
@@ -64,37 +52,55 @@
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel.Location = new System.Drawing.Point(461, 12);
+            this.ScoreLabel.Location = new System.Drawing.Point(528, 9);
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(118, 37);
+            this.ScoreLabel.Size = new System.Drawing.Size(80, 37);
             this.ScoreLabel.TabIndex = 5;
-            this.ScoreLabel.Text = "Score: ";
+            this.ScoreLabel.Text = "Zahl";
             this.ScoreLabel.Click += new System.EventHandler(this.ScoreLabel_Click);
             // 
-            // Form1
+            // LabelAbgrenzung
+            // 
+            this.LabelAbgrenzung.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LabelAbgrenzung.Location = new System.Drawing.Point(410, 0);
+            this.LabelAbgrenzung.Name = "LabelAbgrenzung";
+            this.LabelAbgrenzung.Size = new System.Drawing.Size(10, 465);
+            this.LabelAbgrenzung.TabIndex = 6;
+            // 
+            // ScoreLabelText
+            // 
+            this.ScoreLabelText.AutoSize = true;
+            this.ScoreLabelText.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabelText.Location = new System.Drawing.Point(426, 9);
+            this.ScoreLabelText.Name = "ScoreLabelText";
+            this.ScoreLabelText.Size = new System.Drawing.Size(109, 37);
+            this.ScoreLabelText.TabIndex = 7;
+            this.ScoreLabelText.Text = "Score:";
+            // 
+            // Feld
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(723, 437);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(684, 461);
+            this.Controls.Add(this.ScoreLabelText);
+            this.Controls.Add(this.LabelAbgrenzung);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.GameOverlabel);
-            this.Controls.Add(this.Background);
-            this.Name = "Form1";
+            this.Name = "Feld";
             this.Text = "Snake";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox Background;
         private System.Windows.Forms.Label GameOverlabel;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Label LabelAbgrenzung;
+        private System.Windows.Forms.Label ScoreLabelText;
     }
 }
 

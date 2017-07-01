@@ -15,8 +15,8 @@ namespace Snake
         public Erdbeere(Point position)
         {
             Random rnd = new Random();          // Zufallsvariable X und Y im Bereich (50, 500)
-            int zufallX = rnd.Next(50, 500);    
-            int zufallY = rnd.Next(50, 500);
+            int zufallX = rnd.Next(50, 400);    
+            int zufallY = rnd.Next(50, 400);
 
             position.X += zufallX; //Position.X = Position.X + zufallX, Parameter werden überwiesen
             position.Y += zufallY;
